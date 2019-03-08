@@ -2,6 +2,21 @@
 
 Implement BLoC easier
 
+## install
+```yaml
+base_bloc:
+    git:
+      url: https://github.com/trgcuong/base_bloc.git
+      ref: master
+```
+
+```dart
+import 'package:base_bloc/base_bloc.dart';
+```
+
+
+
+
 ## Getting Started
 
 This project is a starting point for a Dart
