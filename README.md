@@ -1,6 +1,6 @@
 # base_bloc
 
-A new Flutter package.
+Implement BLoC easier
 
 ## Getting Started
 
