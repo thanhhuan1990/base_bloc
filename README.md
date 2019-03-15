@@ -41,7 +41,26 @@ class LoginScreenState extends BaseBlocState<LoginScreen> {
 
     return _buildLoginForm();
   }
-  //....
+ 
+  Widget _buildLoginForm() {
+      return Container(
+          alignment: Alignment.center,
+          child: RaisedButton(child: Text("Login"), onPressed: _onClickLogin,));
+    }
+  
+    Widget _buildLogoutForm() {
+      return Container(
+          alignment: Alignment.center,
+          child: RaisedButton(child: Text("Logout"), onPressed: _onClickLogout,));
+    }
+  
+    void _onClickLogin() {
+     dispatch(SubmitLoginEvent());
+    }
+  
+    void _onClickLogout() {
+      dispatch(SubmitLogoutEvent());
+    }
 }
 ```
 
