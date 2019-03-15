@@ -14,8 +14,8 @@ abstract class BaseBlocState<W extends StatefulWidget> extends State<W>{
 
   @override
   void initState() {
-    bloc = createBloc();
     super.initState();
+    bloc = createBloc();
 
   }
 
