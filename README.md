@@ -2,28 +2,46 @@
 
 Implement BLoC easier
 
-## install
+## Install
 ```yaml
 base_bloc:
     git:
       url: https://github.com/trgcuong/base_bloc.git
-      ref: master
+      ref: 0.0.1
 ```
 
 ```dart
 import 'package:base_bloc/base_bloc.dart';
 ```
 
+## Example
+```dart
+class LoginScreenState extends BaseBlocState<LoginScreen> {
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(appBar:  AppBar(), body: BaseBlocBuilder<LoginState>(bloc, _buildBody));
+  }
 
+  @override
+  BaseBloc createBloc() {
+    return LoginBloc();
+  }
 
-## Getting Started
+  Widget _buildBody(BuildContext context, LoginState state) {
+    if (state.isLoading) {
+      return Container(child: CircularProgressIndicator(),alignment: Alignment.center,);
+    }
+    if (state.error != null) {
+      return Container(child: Text(state.error.toString()),);
+    }
+    if (state.loginStatus == "readyLogin") {
+      return _buildLogoutForm();
+    }
 
-This project is a starting point for a Dart
-[package](https://flutter.io/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+    return _buildLoginForm();
+  }
+  //....
+}
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
