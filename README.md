@@ -1,6 +1,7 @@
 # base_bloc
 
-Implement BLoC easier
+Applying BLoC easier.
+Base on [flutter_bloc](https://pub.dartlang.org/packages/flutter_bloc#-readme-tab-). So you also install it.
 
 ## Install
 ```yaml
