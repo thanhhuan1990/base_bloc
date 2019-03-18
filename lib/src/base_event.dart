@@ -11,3 +11,9 @@ class ErrorEvent extends BaseEvent {
   @override
   String toString() => 'Error: ${error.toString()}';
 }
+
+class InitialEvent extends BaseEvent {
+
+  @override
+  String toString() => 'InitialEvent';
+}
