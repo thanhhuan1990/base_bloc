@@ -8,7 +8,7 @@ Base on [flutter_bloc](https://pub.dartlang.org/packages/flutter_bloc#-readme-ta
 base_bloc:
     git:
       url: https://github.com/trgcuong/base_bloc.git
-      ref: 0.0.1
+      ref: 0.0.2
 ```
 
 ```dart
