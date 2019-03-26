@@ -22,11 +22,15 @@ abstract class BaseBlocState<W extends StatefulWidget> extends State<W>{
   @override
   void dispose() {
     super.dispose();
-    bloc.dispose();
+    disposeBloc();
   }
 
   void dispatch(BaseEvent event){
     bloc?.dispatch(event);
+  }
+
+  void disposeBloc() {
+    bloc?.dispose();
   }
 
 
