@@ -42,7 +42,7 @@ packages:
       name: bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.3"
+    version: "0.15.0"
   build:
     dependency: transitive
     description:
@@ -183,18 +183,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.9"
-  flutter:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   flutter_bloc:
     dependency: "direct dev"
     description:
-      name: flutter_bloc
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.0"
+      path: "packages/flutter_bloc"
+      ref: flutter_web
+      resolved-ref: "21f4b0a21a0de1cb1e9d29ac082be55c3875ee1d"
+      url: "https://github.com/felangel/bloc"
+    source: git
+    version: "0.21.0"
   flutter_web:
     dependency: "direct main"
     description:
@@ -367,6 +364,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.13.15"
+  provider:
+    dependency: transitive
+    description:
+      path: "packages/provider"
+      ref: flutter_web
+      resolved-ref: b3a3ec118ad8cf08a6144257f86a68bcf2020068
+      url: "https://github.com/felangel/provider"
+    source: git
+    version: "3.1.0"
   pub_semver:
     dependency: transitive
     description:
@@ -394,7 +400,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.20.0"
+    version: "0.22.2"
   scratch_space:
     dependency: transitive
     description:
@@ -416,11 +422,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.3"
-  sky_engine:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.99"
   source_maps:
     dependency: transitive
     description:
