@@ -1,5 +1,5 @@
 import 'package:base_bloc/base_bloc.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 
 abstract class BaseBlocWidget extends StatefulWidget {
 }
