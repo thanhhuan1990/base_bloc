@@ -1,8 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-abstract class BaseEvent extends Equatable {
-  BaseEvent([List props = const []]) : super(props);
-}
+abstract class BaseEvent {}
 
 class ErrorEvent extends BaseEvent {
   var error;
@@ -12,7 +9,7 @@ class ErrorEvent extends BaseEvent {
   String toString() => 'Error: ${error.toString()}';
 }
 
-class InitialEvent extends BaseEvent {
+class InitialEvent {
 
   @override
   String toString() => 'InitialEvent';

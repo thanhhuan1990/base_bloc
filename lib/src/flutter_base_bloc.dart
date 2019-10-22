@@ -1,6 +1,6 @@
+import 'package:bloc/bloc.dart';
 import 'package:base_bloc/src/base_event.dart';
 import 'package:base_bloc/src/base_state.dart';
-import 'package:bloc/bloc.dart';
 
 abstract class BaseBloc<S extends BaseState> extends Bloc<BaseEvent, S> {
 
