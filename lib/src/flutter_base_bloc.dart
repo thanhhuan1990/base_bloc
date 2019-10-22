@@ -8,6 +8,6 @@ abstract class BaseBloc<S extends BaseState> extends Bloc<BaseEvent, S> {
   void onError(Object error, StackTrace stacktrace) {
     super.onError(error, stacktrace);
     print(error);
-    dispatch(ErrorEvent(error));
+    add(ErrorEvent(error));
   }
 }
