@@ -14,7 +14,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+    
   bloc: 1.0.0
   flutter_bloc: 1.0.0
   meta: 1.1.7
