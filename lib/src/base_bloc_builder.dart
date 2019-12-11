@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// Created by Huan.Huynh on 2019-10-22.
 ///
-/// Copyright © 2019 teqnological. All rights reserved.
+/// Copyright © 2019 Huan.Huynh. All rights reserved.
 
 class BaseBlocBuilder<S extends BaseState> extends BlocBuilder<BaseBloc<S>, S> {
    BaseBlocBuilder(BaseBloc<S> bloc, BlocWidgetBuilder<S> builder)
