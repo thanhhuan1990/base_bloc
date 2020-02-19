@@ -3,7 +3,7 @@
 ///
 /// Copyright © 2019 Huan.Huynh. All rights reserved.
 abstract class BaseEvent {
-  String name();
+  String eventName();
 }
 
 class ErrorEvent extends BaseEvent {
@@ -15,7 +15,7 @@ class ErrorEvent extends BaseEvent {
   String toString() => 'Error: ${error.toString()}';
 
   @override
-  String name() => "ErrorEvent";
+  String eventName() => "ErrorEvent";
 }
 
 class InitialEvent extends BaseEvent {
@@ -24,5 +24,5 @@ class InitialEvent extends BaseEvent {
   String toString() => 'InitialEvent';
 
   @override
-  String name() => "InitialEvent";
+  String eventName() => "InitialEvent";
 }
