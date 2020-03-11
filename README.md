@@ -16,52 +16,84 @@ import 'package:base_bloc/base_bloc.dart';
 ```
 
 ## Example
-```dart
-class LoginScreenState extends BaseBlocState<LoginScreen> {
+```Widget
+class LoginWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => LoginWidgetState();
+}
+
+class LoginWidgetState extends BaseBlocState<LoginWidget> {
+
+  BuildContext _context;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar:  AppBar(), body: BaseBlocBuilder<LoginState>(bloc, _buildBody));
-  }
+  Widget build(BuildContext context) =>
+      BaseBlocBuilder<LoginState>(bloc, _buildBody);
 
   @override
-  BaseBloc createBloc() {
-    return LoginBloc();
-  }
+  BaseBloc createBloc() => LoginBloc();
 
   Widget _buildBody(BuildContext context, LoginState state) {
-    if (state.isLoading) {
-      return Container(child: CircularProgressIndicator(),alignment: Alignment.center,);
-    }
-    if (state.error != null) {
-      return Container(child: Text(state.error.toString()),);
-    }
-    if (state.loginStatus == "readyLogin") {
-      return _buildLogoutForm();
-    }
-
-    return _buildLoginForm();
+    return SafeArea(
+        bottom: false, top: false,
+        child: Scaffold(
+          body: Builder(builder: (BuildContext context) {
+            _context = context;
+            return Container(
+              child: Center(
+                child: Text("Login Widget"),
+              ),
+            );
+          }),
+        )
+    );
   }
- 
-  Widget _buildLoginForm() {
-      return Container(
-          alignment: Alignment.center,
-          child: RaisedButton(child: Text("Login"), onPressed: _onClickLogin,));
+
+}
+```
+```State
+@immutable
+class LoginState extends BaseState {
+  final error;
+  final bool isLoading;
+
+  LoginState({
+    this.isLoading = false,
+    this.error,
+  });
+
+  LoginState copyWith({
+    bool isLoading,
+    var error,
+  }) =>
+      LoginState(
+        isLoading: isLoading ?? false,
+        error: error,
+      );
+}
+```
+```Event
+@immutable
+class LoginEvent extends BaseEvent {}
+```
+```Bloc
+class LoginBloc extends BaseBloc<LoginState> {
+
+  @override
+  LoginState get initialState => LoginState();
+
+  @override
+  Stream<LoginState> mapEventToState(BaseEvent event) async* {
+    if (event is InitialEvent) {
+
+      /// Implement InitialEvent
+
+    } else if (event is ErrorEvent) {
+
+      /// Implement ErrorEvent
+      yield state.copyWith(error: event.error);
     }
-  
-    Widget _buildLogoutForm() {
-      return Container(
-          alignment: Alignment.center,
-          child: RaisedButton(child: Text("Logout"), onPressed: _onClickLogout,));
-    }
-  
-    void _onClickLogin() {
-     dispatch(SubmitLoginEvent());
-    }
-  
-    void _onClickLogout() {
-      dispatch(SubmitLogoutEvent());
-    }
+  }
 }
 ```
 
